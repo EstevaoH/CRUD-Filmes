@@ -1,0 +1,39 @@
+<div class="container">
+    <form class="form-inline" #fm=ngForm>
+        <input class="form-control mr-sm-2" type="text" placeholder="Pesquisar" aria-label="Pesquisar" name="filme"
+            [(ngModel)]="filme.nome">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="buscarFilme()">Pesquisar</button>
+
+        <div class="container">
+            <table class="table">
+                <tr>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Diretor</th>
+                    <th scope="col">Lançamento</th>
+                    <th scope="col">Gênero</th>
+                    <th scope="col">Censura</th>
+                    <th scope="col">Poster</th>
+                    <th scope="col">Excluir</th>
+                    <th scope="col">Atualizar</th>
+                </tr>
+                <tr *ngFor="let f of filme">
+                    <td>{{f.nome}}</td>
+                    <td>{{f.diretor}}</td>
+                    <td>{{f.dtLancamento}}</td>
+                    <td>{{f.genero}}</td>
+                    <td>{{f.censura}}</td>
+                    <td><img src="../../assets/{{f.nome}}.jpg" width="60px" ></td>
+                    <td><button class="btn btn-danger" type="submit" (click)="apagarFilme(f.id)"
+                            *ngIf="habilitarBotao">Deletar</button></td>
+
+                    <td><button type="button" class="btn btn-warning" *ngIf="habilitarBotao"
+                            [disabled]='fm.form.invalid' (click)="atualizar(f.id)">Atualizar</button></td>
+                </tr>
+            </table>
+ 
+        </div>
+    </form>
+</div>
+<div>
+    {{mensagem}}
+</div>

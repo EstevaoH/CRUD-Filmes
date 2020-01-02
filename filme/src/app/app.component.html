@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #cb3956;" *ngIf="estaLogado()">
+  <div class="container">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink='/tabela-filme'>Lista de Filmes <span class="sr-only">(Página atual)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink='/cadastro-filme'>Cadastra Filmes</a>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink='/buscar-filme'>Buscar Filme</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-item nav-link" href="#" (click)="onLogoff($event)">Sair</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

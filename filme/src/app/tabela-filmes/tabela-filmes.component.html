@@ -1,0 +1,20 @@
+<div class="container">
+<table class="table">
+    <tr>
+      <th scope="col">Titulo</th>
+      <th scope="col">Diretor</th>
+      <th scope="col">Lançamento</th>
+      <th scope="col">Gênero</th>
+      <th scope="col">Faixa etária</th>
+      <th scope="col">Poster</th>
+    </tr>
+    <tr *ngFor="let f of filme">
+      <td >{{f.nome}}</td>
+      <td>{{f.diretor}}</td>
+      <td>{{f.dtLancamento}}</td>
+      <td>{{f.genero}}</td>
+      <td>{{f.censura}}</td>
+      <td><img src="../../assets/{{f.nome}}.jpg" width="60px" ></td>
+    </tr>
+  </table>
+</div>

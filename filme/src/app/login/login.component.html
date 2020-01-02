@@ -1,0 +1,15 @@
+<body class="text-center">
+    <form class="form-signin" (ngSubmit)="onLogin()">
+      <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+      <label for="login" class="sr-only">Usuario</label>
+      <input type="text" name="login" id="login" [(ngModel)]="login" class="form-control" placeholder="Seu email" required autofocus>
+      
+      
+      <label for="Senha" class="sr-only">Password</label>
+      <input type="password" id="senha" name="senha" class="form-control" [(ngModel)]="senha" placeholder="Senha" required>
+ 
+      <button class="btn btn-lg " style="background-color: #cb3956;" type="submit">Sign in</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2019</p>
+    </form>
+    <div>{{mensagem}}</div>
+  </body>
